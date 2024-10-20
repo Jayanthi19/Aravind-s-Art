@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aravind's Art Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aravind's Art Shop</h1>
+        <p>Turn your photos into stunning artworks!</p>
+    </header>
+
+    <div class="container">
+        <!-- Art Order Form -->
+        <div class="form-section">
+            <h2>Place Your Order</h2>
+            <form id="orderForm" action="process_order.php" method="post" enctype="multipart/form-data">
+                <label for="artType">Select Art Type:</label>
+                <select id="artType" name="artType" required>
+                    <option value="oil_painting">Oil Painting</option>
+                    <option value="pencil_art">Pencil Art</option>
+                </select>
+
+                <label for="frameSize">Select Frame Size:</label>
+                <select id="frameSize" name="frameSize" required>
+                    <option value="small">Small (12"x16")</option>
+                    <option value="medium">Medium (18"x24")</option>
+                    <option value="large">Large (24"x36")</option>
+                </select>
+
+                <label for="photoUpload">Upload Your Photo:</label>
+                <input type="file" id="photoUpload" name="photoUpload" accept="image/*" required>
+
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="form-section">
+            <h2>Checkout</h2>
+            <form id="checkoutForm" action="process_checkout.php" method="post">
+                <h3>Billing & Shipping Information</h3>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <h3>Payment Information</h3>
+                <label for="cardNumber">Credit/Debit Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="cardExpiry">Expiry Date:</label>
+                <input type="month" id="cardExpiry" name="cardExpiry" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jayanthi's Art Shop - Bringing Your Photos to Life</p>
+    </footer>
+</body>
+</html>
